@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Besley:wght@400;700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style type="text/css">
+        body{
+            position: relative;
+        }
+        #color-move{
+            width: 80%;
+            margin: auto;
+            border: 1px dashed;
+        }
+        p{
+            padding: 1rem;
+        }
+    </style>
+    <main id="color-move">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam voluptatibus provident reiciendis unde voluptatum fugiat tenetur atque cumque recusandae accusantium quo accusamus laborum temporibus, eveniet dolorem, voluptatem perferendis, nemo minima.
+        </p>
+    </main>
+
+    <script>
+        window.addEventListener('load', function(event) {
+            let max = 100 ; 
+            let i = 0 ; 
+            let $color = document.querySelector('#color-move p'); 
+            $color.addEventListener("mousemove", function( event ) {
+                document.body.style.background = 'rgba(255, 255, 0, '+(i/100)+')';
+                i++;
+                if(i >100){
+                    alert('Voila le fond est en yellow')
+                    i = 0 ; 
+                }
+            }, false);
+        });
+    </script>
+</body>
+</html>
